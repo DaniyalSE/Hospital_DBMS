@@ -75,7 +75,6 @@ server (Express + ws)
 
 ```sh
 git clone https://github.com/DaniyalSE/Hospital_DBMS.git
-cd <YOUR_PROJECT_NAME>
 
 npm install
 cp .env.example .env
