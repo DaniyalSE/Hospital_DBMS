@@ -34,6 +34,8 @@ Real-time hospital intelligence on top of MongoDB Atlas: aggregation pipelines, 
 - **Atlas-native analytics** – each page hits the live cluster via curated REST + WebSocket pipes.
 - **Aggregation Builder 2.0** – stage builder, raw mode, index manager, execution stats, preset pipelines.
 - **Collections cockpit** – search, paginate, edit, and delete with toast-backed feedback loops.
+- **Optimistic locking** – versioned edits stop lost updates when multiple operators touch the same document.
+- **Locking dashboard** – real-time read/write lock visualizer with queues, logs, and classroom-ready simulations.
 - **Dashboards & Admin** – KPI cards, trend charts, audit logs, and staff metrics in one place.
 - **Vulnerability Lab** – safe playground to demonstrate NoSQL injection vectors vs. mitigations.
 - **Resilient auth** – Supabase-powered when configured, otherwise auto-falls back to mock auth (with creator-only admin access `naqvidaniyal598@gmail.com` / `dani007`).
@@ -108,6 +110,20 @@ Mock auth ensures the demo remains usable offline. Only the creator’s credenti
 | Execution Stats | Auto-runs `explain("executionStats")`, displaying exec time, docs/keys examined, winning plan, and raw explain JSON. |
 | Preset Pipelines | Jump-start analysis with curated scenarios (gender counts, department loads, etc.). |
 | Safety Rails | JSON validation, result truncation warnings, clipboard helpers, admin-only save button. |
+
+## 🔒 Concurrency Control
+
+- Each write receives an auto-managed `__v` version stamp plus `createdAt`/`updatedAt` metadata.
+- Collection edits submit `expectedVersion`; the API increments the version and rejects mismatches with HTTP 409.
+- Operators instantly see the current version in the document dialog, so concurrent edits never silently clobber data.
+- Dedicated `LockManager` (see `server/concurrency/LockManager.ts`) enforces fair read/write locks per collection, queues requests with timeouts, and writes audit trails to `logs/locks.log`.
+- Aggregations run under read locks while inserts/updates/deletes/index changes require write locks, ensuring hot collections like `appointments` stay consistent.
+
+## 📟 Locking Dashboard
+
+- Visit `/locking` (or hit the new “Locking System” tab) to drive a full classroom demo of read/write contention.
+- Buttons fan out to `/api/locks/*` endpoints for fetching status, queues, simulations, forced unlocks, and cluster-wide clears.
+- Tables show active holders plus queued sessions, while the log panel tails `locks.log` so students see every acquire/release event.
 
 ## 🛡️ Vulnerability Lab Explained
 

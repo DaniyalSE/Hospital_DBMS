@@ -192,8 +192,11 @@ export default function CollectionView() {
       const payload = JSON.parse(editedJson || '{}');
       setIsSaving(true);
       if (isEditMode && selectedDoc) {
-        const { _id, ...rest } = payload;
-        await updateDocument(collectionName, String(selectedDoc._id), rest);
+        const { _id, __v, ...rest } = payload;
+        const versionFromPayload = typeof __v === 'number' ? __v : undefined;
+        const fallbackVersion = typeof selectedDoc.__v === 'number' ? selectedDoc.__v : undefined;
+        const expectedVersion = versionFromPayload ?? fallbackVersion ?? 0;
+        await updateDocument(collectionName, String(selectedDoc._id), rest, expectedVersion);
         toast({ title: 'Document updated', description: 'Changes saved to MongoDB' });
       } else {
         await createDocument(collectionName, payload);
@@ -436,8 +439,13 @@ export default function CollectionView() {
         <DialogContent className="max-w-2xl glass">
           <DialogHeader>
             <DialogTitle>{isEditMode ? (selectedDoc ? 'Edit Document' : 'New Document') : 'View Document'}</DialogTitle>
-            <DialogDescription>
+            <DialogDescription className="flex flex-col gap-1">
               {selectedDoc?._id ? `ID: ${String(selectedDoc._id)}` : 'JSON Editor'}
+              {selectedDoc ? (
+                <Badge variant="secondary" className="w-fit">
+                  {typeof selectedDoc.__v === 'number' ? `Version v${selectedDoc.__v}` : 'Legacy (unversioned)'}
+                </Badge>
+              ) : null}
             </DialogDescription>
           </DialogHeader>
           <div className="relative">

@@ -18,6 +18,7 @@ import {
   Users,
   Layers,
   Bug,
+  Lock,
   ChevronLeft,
   ChevronRight,
 } from 'lucide-react';
@@ -32,6 +33,7 @@ const navigation = [
   { name: 'Collections', href: '/collections', icon: FolderOpen },
   { name: 'Aggregations', href: '/aggregations', icon: GitBranch },
   { name: 'Transactions', href: '/transactions', icon: Layers },
+  { name: 'Locking System', href: '/locking', icon: Lock },
   { name: 'Vulnerability Lab', href: '/vulnerability-lab', icon: Bug, adminOnly: false },
   { name: 'Admin', href: '/admin', icon: Shield, adminOnly: true },
   { name: 'Settings', href: '/settings', icon: Settings },

@@ -1,0 +1,259 @@
+[2025-12-04T15:17:45.918Z] QUEUED type=write resource=collection:Patients session=545afe3a-6d0e-482b-bb97-cd8cb7efd444
+[2025-12-04T15:17:45.919Z] ACQUIRED type=write resource=collection:Patients session=545afe3a-6d0e-482b-bb97-cd8cb7efd444
+[2025-12-04T15:17:46.140Z] RELEASED resource=collection:Patients session=545afe3a-6d0e-482b-bb97-cd8cb7efd444
+[2025-12-04T15:17:50.913Z] ACQUIRED type=read resource=collection:Patients session=49fc7a3f-e97b-49c6-8161-6091dce8d9c1
+[2025-12-04T15:17:50.913Z] QUEUED type=read resource=collection:Patients session=49fc7a3f-e97b-49c6-8161-6091dce8d9c1
+[2025-12-04T15:17:51.032Z] RELEASED resource=collection:Patients session=49fc7a3f-e97b-49c6-8161-6091dce8d9c1
+[2025-12-04T15:17:51.042Z] QUEUED type=read resource=collection:Patients session=2ba0d3ab-e5b2-40e5-b7a8-8dd588b180ea
+[2025-12-04T15:17:51.042Z] ACQUIRED type=read resource=collection:Patients session=2ba0d3ab-e5b2-40e5-b7a8-8dd588b180ea
+[2025-12-04T15:17:51.186Z] RELEASED resource=collection:Patients session=2ba0d3ab-e5b2-40e5-b7a8-8dd588b180ea
+[2025-12-04T15:18:16.738Z] QUEUED type=read resource=collection:Patients session=52feb3c8-1b4c-4383-b55d-da384600fa33
+[2025-12-04T15:18:16.738Z] ACQUIRED type=read resource=collection:Patients session=52feb3c8-1b4c-4383-b55d-da384600fa33
+[2025-12-04T15:18:16.821Z] RELEASED resource=collection:Patients session=52feb3c8-1b4c-4383-b55d-da384600fa33
+[2025-12-04T15:18:16.848Z] QUEUED type=read resource=collection:Patients session=4c04c707-fb70-44f8-99ef-281c03cebea3
+[2025-12-04T15:18:16.848Z] ACQUIRED type=read resource=collection:Patients session=4c04c707-fb70-44f8-99ef-281c03cebea3
+[2025-12-04T15:18:16.963Z] RELEASED resource=collection:Patients session=4c04c707-fb70-44f8-99ef-281c03cebea3
+[2025-12-04T15:18:27.133Z] QUEUED type=write resource=collection:Patients session=4862fb91-5e60-4670-8127-3a0d72ba03a0
+[2025-12-04T15:18:27.133Z] ACQUIRED type=write resource=collection:Patients session=4862fb91-5e60-4670-8127-3a0d72ba03a0
+[2025-12-04T15:18:27.226Z] RELEASED resource=collection:Patients session=4862fb91-5e60-4670-8127-3a0d72ba03a0
+[2025-12-04T15:18:30.181Z] QUEUED type=write resource=collection:Patients session=897d1aa1-bfcf-4c0b-b263-98345e9ac550
+[2025-12-04T15:18:30.181Z] ACQUIRED type=write resource=collection:Patients session=897d1aa1-bfcf-4c0b-b263-98345e9ac550
+[2025-12-04T15:18:30.265Z] RELEASED resource=collection:Patients session=897d1aa1-bfcf-4c0b-b263-98345e9ac550
+[2025-12-04T15:18:40.523Z] QUEUED type=write resource=collection:Patients session=4952e0c3-6952-43d1-9656-92634b5351a3
+[2025-12-04T15:18:40.523Z] ACQUIRED type=write resource=collection:Patients session=4952e0c3-6952-43d1-9656-92634b5351a3
+[2025-12-04T15:18:40.671Z] RELEASED resource=collection:Patients session=4952e0c3-6952-43d1-9656-92634b5351a3
+[2025-12-04T15:18:42.114Z] QUEUED type=read resource=collection:Patients session=e9529216-1918-441a-83fd-553adb7cd2d6
+[2025-12-04T15:18:42.114Z] ACQUIRED type=read resource=collection:Patients session=e9529216-1918-441a-83fd-553adb7cd2d6
+[2025-12-04T15:18:42.251Z] RELEASED resource=collection:Patients session=e9529216-1918-441a-83fd-553adb7cd2d6
+[2025-12-04T15:18:42.286Z] QUEUED type=read resource=collection:Patients session=677a950f-fbb8-4407-a824-af1e35281af0
+[2025-12-04T15:18:42.286Z] ACQUIRED type=read resource=collection:Patients session=677a950f-fbb8-4407-a824-af1e35281af0
+[2025-12-04T15:18:42.375Z] RELEASED resource=collection:Patients session=677a950f-fbb8-4407-a824-af1e35281af0
+[2025-12-04T15:18:58.353Z] QUEUED type=read resource=collection:Patients session=d438a876-c3ab-4788-8dcb-0064658b1165
+[2025-12-04T15:18:58.354Z] ACQUIRED type=read resource=collection:Patients session=d438a876-c3ab-4788-8dcb-0064658b1165
+[2025-12-04T15:18:58.475Z] RELEASED resource=collection:Patients session=d438a876-c3ab-4788-8dcb-0064658b1165
+[2025-12-04T15:18:58.492Z] QUEUED type=read resource=collection:Patients session=6711eaed-70a2-42f3-b7da-776299991ca6
+[2025-12-04T15:18:58.492Z] ACQUIRED type=read resource=collection:Patients session=6711eaed-70a2-42f3-b7da-776299991ca6
+[2025-12-04T15:18:58.659Z] RELEASED resource=collection:Patients session=6711eaed-70a2-42f3-b7da-776299991ca6
+[2025-12-04T15:19:13.213Z] QUEUED type=read resource=collection:Patients session=b43be071-139c-4795-bfb3-d92a30fcabd3
+[2025-12-04T15:19:13.213Z] ACQUIRED type=read resource=collection:Patients session=b43be071-139c-4795-bfb3-d92a30fcabd3
+[2025-12-04T15:19:13.289Z] RELEASED resource=collection:Patients session=b43be071-139c-4795-bfb3-d92a30fcabd3
+[2025-12-04T15:19:13.295Z] QUEUED type=read resource=collection:Patients session=ed7979bf-b087-48be-bd25-26e7951a6113
+[2025-12-04T15:19:13.295Z] ACQUIRED type=read resource=collection:Patients session=ed7979bf-b087-48be-bd25-26e7951a6113
+[2025-12-04T15:19:13.383Z] RELEASED resource=collection:Patients session=ed7979bf-b087-48be-bd25-26e7951a6113
+[2025-12-04T15:19:17.954Z] QUEUED type=read resource=collection:Patients session=5ced2926-c357-4b4a-abf1-51a4327a2735
+[2025-12-04T15:19:17.954Z] ACQUIRED type=read resource=collection:Patients session=5ced2926-c357-4b4a-abf1-51a4327a2735
+[2025-12-04T15:19:21.006Z] RELEASED resource=collection:Patients session=5ced2926-c357-4b4a-abf1-51a4327a2735
+[2025-12-04T15:19:21.070Z] QUEUED type=read resource=collection:Patients session=c81810f6-5148-48ff-9ec1-70707772a42f
+[2025-12-04T15:19:21.070Z] ACQUIRED type=read resource=collection:Patients session=c81810f6-5148-48ff-9ec1-70707772a42f
+[2025-12-04T15:19:21.171Z] RELEASED resource=collection:Patients session=c81810f6-5148-48ff-9ec1-70707772a42f
+[2025-12-04T15:50:51.068Z] QUEUED type=read resource=Appointments session=sim-read-9cd0cadf-962f-4a2c-add5-da2940cdf48f
+[2025-12-04T15:50:51.068Z] ACQUIRED type=read resource=Appointments session=sim-read-9cd0cadf-962f-4a2c-add5-da2940cdf48f
+[2025-12-04T15:50:54.077Z] RELEASED resource=Appointments session=sim-read-9cd0cadf-962f-4a2c-add5-da2940cdf48f
+[2025-12-04T15:51:02.223Z] ACQUIRED type=write resource=Appointments session=sim-write-da7334d7-9f7e-4d50-a0f0-97c9fcbc4a51
+[2025-12-04T15:51:02.223Z] QUEUED type=write resource=Appointments session=sim-write-da7334d7-9f7e-4d50-a0f0-97c9fcbc4a51
+[2025-12-04T15:51:05.237Z] RELEASED resource=Appointments session=sim-write-da7334d7-9f7e-4d50-a0f0-97c9fcbc4a51
+[2025-12-04T15:51:13.209Z] CLEAR_ALL invoked
+[2025-12-04T15:51:15.148Z] QUEUED type=read resource=Appointments session=sim-read-b1c0493d-3024-40b2-abb7-66630d693ae8
+[2025-12-04T15:51:15.148Z] ACQUIRED type=read resource=Appointments session=sim-read-b1c0493d-3024-40b2-abb7-66630d693ae8
+[2025-12-04T15:51:18.158Z] RELEASED resource=Appointments session=sim-read-b1c0493d-3024-40b2-abb7-66630d693ae8
+[2025-12-04T15:51:19.203Z] QUEUED type=write resource=Appointments session=sim-write-2712d63d-d20f-43c0-999b-3de85fc9869b
+[2025-12-04T15:51:19.203Z] ACQUIRED type=write resource=Appointments session=sim-write-2712d63d-d20f-43c0-999b-3de85fc9869b
+[2025-12-04T15:51:22.209Z] RELEASED resource=Appointments session=sim-write-2712d63d-d20f-43c0-999b-3de85fc9869b
+[2025-12-04T15:51:28.160Z] QUEUED type=write resource=Appointments session=sim-write-899f9631-d958-4360-a2ee-780dbb9ef7c6
+[2025-12-04T15:51:28.161Z] ACQUIRED type=write resource=Appointments session=sim-write-899f9631-d958-4360-a2ee-780dbb9ef7c6
+[2025-12-04T15:51:28.177Z] QUEUED type=write resource=Appointments session=sim-write-48845b9e-7b09-4c2b-acf6-e7fe17798a3a
+[2025-12-04T15:51:31.173Z] RELEASED resource=Appointments session=sim-write-899f9631-d958-4360-a2ee-780dbb9ef7c6
+[2025-12-04T15:51:31.184Z] ACQUIRED type=write resource=Appointments session=sim-write-48845b9e-7b09-4c2b-acf6-e7fe17798a3a
+[2025-12-04T15:51:34.189Z] RELEASED resource=Appointments session=sim-write-48845b9e-7b09-4c2b-acf6-e7fe17798a3a
+[2025-12-04T15:52:18.913Z] QUEUED type=read resource=Admissions session=sim-read-7e5068ad-4246-4918-b586-039e26f4d7c9
+[2025-12-04T15:52:18.914Z] ACQUIRED type=read resource=Admissions session=sim-read-7e5068ad-4246-4918-b586-039e26f4d7c9
+[2025-12-04T15:52:21.918Z] RELEASED resource=Admissions session=sim-read-7e5068ad-4246-4918-b586-039e26f4d7c9
+[2025-12-04T15:52:22.308Z] QUEUED type=write resource=Admissions session=sim-write-3b4cdbbd-ea58-4750-84c7-257fcebd7ccc
+[2025-12-04T15:52:22.308Z] ACQUIRED type=write resource=Admissions session=sim-write-3b4cdbbd-ea58-4750-84c7-257fcebd7ccc
+[2025-12-04T15:52:25.319Z] RELEASED resource=Admissions session=sim-write-3b4cdbbd-ea58-4750-84c7-257fcebd7ccc
+[2025-12-04T15:54:32.045Z] QUEUED type=write resource=Appointments session=sim-write-bede0b6e-0324-4c82-a59a-750daa52f6c6
+[2025-12-04T15:54:32.045Z] ACQUIRED type=write resource=Appointments session=sim-write-bede0b6e-0324-4c82-a59a-750daa52f6c6
+[2025-12-04T15:54:35.051Z] RELEASED resource=Appointments session=sim-write-bede0b6e-0324-4c82-a59a-750daa52f6c6
+[2025-12-04T15:54:45.840Z] QUEUED type=read resource=Appointments session=sim-read-f6fd43f7-21cc-45bd-8df5-84c7a8e42d87
+[2025-12-04T15:54:45.840Z] ACQUIRED type=read resource=Appointments session=sim-read-f6fd43f7-21cc-45bd-8df5-84c7a8e42d87
+[2025-12-04T15:54:48.495Z] QUEUED type=write resource=Appointments session=sim-write-35dbd388-6317-417e-9314-1067fa769c3d
+[2025-12-04T15:54:48.848Z] RELEASED resource=Appointments session=sim-read-f6fd43f7-21cc-45bd-8df5-84c7a8e42d87
+[2025-12-04T15:54:48.856Z] ACQUIRED type=write resource=Appointments session=sim-write-35dbd388-6317-417e-9314-1067fa769c3d
+[2025-12-04T15:54:51.857Z] RELEASED resource=Appointments session=sim-write-35dbd388-6317-417e-9314-1067fa769c3d
+[2025-12-04T15:55:03.828Z] QUEUED type=write resource=Patients session=6cb7938f-477e-4f37-9b65-40ca1bcc927c
+[2025-12-04T15:55:03.828Z] ACQUIRED type=write resource=Patients session=6cb7938f-477e-4f37-9b65-40ca1bcc927c
+[2025-12-04T15:55:03.911Z] RELEASED resource=Patients session=6cb7938f-477e-4f37-9b65-40ca1bcc927c
+[2025-12-04T15:57:02.049Z] ACQUIRED type=read resource=Appointments session=sim-read-4e38c814-29c8-4fd2-9743-b8c39ed5febf
+[2025-12-04T15:57:02.049Z] QUEUED type=read resource=Appointments session=sim-read-4e38c814-29c8-4fd2-9743-b8c39ed5febf
+[2025-12-04T15:57:05.069Z] RELEASED resource=Appointments session=sim-read-4e38c814-29c8-4fd2-9743-b8c39ed5febf
+[2025-12-04T15:58:23.702Z] CLEAR_ALL invoked
+[2025-12-04T15:58:28.476Z] QUEUED type=read resource=Appointments session=sim-read-75cc45d5-7ff3-45f0-b1f8-175dce7316e1
+[2025-12-04T15:58:28.476Z] ACQUIRED type=read resource=Appointments session=sim-read-75cc45d5-7ff3-45f0-b1f8-175dce7316e1
+[2025-12-04T15:58:30.017Z] QUEUED type=write resource=Appointments session=sim-write-071f1904-981f-4459-9887-3deacc1064f8
+[2025-12-04T15:58:31.489Z] RELEASED resource=Appointments session=sim-read-75cc45d5-7ff3-45f0-b1f8-175dce7316e1
+[2025-12-04T15:58:31.495Z] ACQUIRED type=write resource=Appointments session=sim-write-071f1904-981f-4459-9887-3deacc1064f8
+[2025-12-04T15:58:34.511Z] RELEASED resource=Appointments session=sim-write-071f1904-981f-4459-9887-3deacc1064f8
+[2025-12-04T16:01:05.248Z] QUEUED type=read resource=Appointments session=sim-read-12510b90-8b33-4026-95cd-8d083d3d7663
+[2025-12-04T16:01:05.248Z] ACQUIRED type=read resource=Appointments session=sim-read-12510b90-8b33-4026-95cd-8d083d3d7663
+[2025-12-04T16:01:06.622Z] QUEUED type=read resource=Appointments session=sim-read-d37c08f2-3d93-427b-a84e-fd73a60092a7
+[2025-12-04T16:01:06.622Z] ACQUIRED type=read resource=Appointments session=sim-read-d37c08f2-3d93-427b-a84e-fd73a60092a7
+[2025-12-04T16:01:08.253Z] RELEASED resource=Appointments session=sim-read-12510b90-8b33-4026-95cd-8d083d3d7663
+[2025-12-04T16:01:09.637Z] RELEASED resource=Appointments session=sim-read-d37c08f2-3d93-427b-a84e-fd73a60092a7
+[2025-12-04T16:01:10.378Z] QUEUED type=read resource=Appointments session=sim-read-bf838882-0c9f-4092-99f4-be2646724e47
+[2025-12-04T16:01:10.378Z] ACQUIRED type=read resource=Appointments session=sim-read-bf838882-0c9f-4092-99f4-be2646724e47
+[2025-12-04T16:01:11.321Z] ACQUIRED type=read resource=Appointments session=sim-read-30f81184-e1a0-4c35-bd44-47aa9059953c
+[2025-12-04T16:01:11.321Z] QUEUED type=read resource=Appointments session=sim-read-30f81184-e1a0-4c35-bd44-47aa9059953c
+[2025-12-04T16:01:13.392Z] RELEASED resource=Appointments session=sim-read-bf838882-0c9f-4092-99f4-be2646724e47
+[2025-12-04T16:01:14.325Z] RELEASED resource=Appointments session=sim-read-30f81184-e1a0-4c35-bd44-47aa9059953c
+[2025-12-04T16:01:14.674Z] QUEUED type=write resource=Appointments session=sim-write-6309505d-770d-430d-a51b-17072e169968
+[2025-12-04T16:01:14.674Z] ACQUIRED type=write resource=Appointments session=sim-write-6309505d-770d-430d-a51b-17072e169968
+[2025-12-04T16:01:17.687Z] RELEASED resource=Appointments session=sim-write-6309505d-770d-430d-a51b-17072e169968
+[2025-12-04T16:01:18.192Z] QUEUED type=read resource=Appointments session=sim-read-8c0fe65b-b930-41cd-98f8-34ddc3d70b81
+[2025-12-04T16:01:18.192Z] ACQUIRED type=read resource=Appointments session=sim-read-8c0fe65b-b930-41cd-98f8-34ddc3d70b81
+[2025-12-04T16:01:20.186Z] QUEUED type=read resource=Appointments session=sim-read-389dabb6-cc3c-42ff-ab53-cb6340b63b04
+[2025-12-04T16:01:20.186Z] ACQUIRED type=read resource=Appointments session=sim-read-389dabb6-cc3c-42ff-ab53-cb6340b63b04
+[2025-12-04T16:01:21.167Z] ACQUIRED type=read resource=Appointments session=sim-read-576681a8-de63-45cb-a3f3-8161deab25a3
+[2025-12-04T16:01:21.167Z] QUEUED type=read resource=Appointments session=sim-read-576681a8-de63-45cb-a3f3-8161deab25a3
+[2025-12-04T16:01:21.204Z] RELEASED resource=Appointments session=sim-read-8c0fe65b-b930-41cd-98f8-34ddc3d70b81
+[2025-12-04T16:01:22.018Z] QUEUED type=read resource=Appointments session=sim-read-33a3c500-7081-42f2-b3e7-947f3c91c0d0
+[2025-12-04T16:01:22.018Z] ACQUIRED type=read resource=Appointments session=sim-read-33a3c500-7081-42f2-b3e7-947f3c91c0d0
+[2025-12-04T16:01:22.652Z] ACQUIRED type=read resource=Appointments session=sim-read-54a6451b-a1cf-4f0d-a35a-5a38f81ab609
+[2025-12-04T16:01:22.652Z] QUEUED type=read resource=Appointments session=sim-read-54a6451b-a1cf-4f0d-a35a-5a38f81ab609
+[2025-12-04T16:01:23.187Z] RELEASED resource=Appointments session=sim-read-389dabb6-cc3c-42ff-ab53-cb6340b63b04
+[2025-12-04T16:01:23.217Z] QUEUED type=read resource=Appointments session=sim-read-1df75842-5be2-46f2-907c-84381acb5d6d
+[2025-12-04T16:01:23.217Z] ACQUIRED type=read resource=Appointments session=sim-read-1df75842-5be2-46f2-907c-84381acb5d6d
+[2025-12-04T16:01:24.172Z] RELEASED resource=Appointments session=sim-read-576681a8-de63-45cb-a3f3-8161deab25a3
+[2025-12-04T16:01:25.018Z] RELEASED resource=Appointments session=sim-read-33a3c500-7081-42f2-b3e7-947f3c91c0d0
+[2025-12-04T16:01:25.653Z] RELEASED resource=Appointments session=sim-read-54a6451b-a1cf-4f0d-a35a-5a38f81ab609
+[2025-12-04T16:01:26.230Z] RELEASED resource=Appointments session=sim-read-1df75842-5be2-46f2-907c-84381acb5d6d
+[2025-12-04T16:01:33.734Z] QUEUED type=write resource=Appointments session=sim-write-8fd113b4-4d9d-4e30-8507-f14b5fc00895
+[2025-12-04T16:01:33.734Z] ACQUIRED type=write resource=Appointments session=sim-write-8fd113b4-4d9d-4e30-8507-f14b5fc00895
+[2025-12-04T16:01:33.761Z] QUEUED type=write resource=Appointments session=sim-write-054c5460-e827-4aa5-8555-2b2a51f0f850
+[2025-12-04T16:01:36.745Z] RELEASED resource=Appointments session=sim-write-8fd113b4-4d9d-4e30-8507-f14b5fc00895
+[2025-12-04T16:01:36.753Z] ACQUIRED type=write resource=Appointments session=sim-write-054c5460-e827-4aa5-8555-2b2a51f0f850
+[2025-12-04T16:01:39.757Z] RELEASED resource=Appointments session=sim-write-054c5460-e827-4aa5-8555-2b2a51f0f850
+[2025-12-04T16:02:15.728Z] QUEUED type=read resource=Appointments session=sim-read-84fcd0a3-dabd-4304-b6de-34d60f11ee1c
+[2025-12-04T16:02:15.728Z] ACQUIRED type=read resource=Appointments session=sim-read-84fcd0a3-dabd-4304-b6de-34d60f11ee1c
+[2025-12-04T16:02:18.733Z] RELEASED resource=Appointments session=sim-read-84fcd0a3-dabd-4304-b6de-34d60f11ee1c
+[2025-12-04T16:02:23.541Z] QUEUED type=read resource=Appointments session=sim-read-c40a6c63-73b3-41b5-882c-ecf0507c083f
+[2025-12-04T16:02:23.541Z] ACQUIRED type=read resource=Appointments session=sim-read-c40a6c63-73b3-41b5-882c-ecf0507c083f
+[2025-12-04T16:02:25.978Z] QUEUED type=write resource=Appointments session=sim-write-cb7c56b8-b070-4616-bd3b-a21eed4975e0
+[2025-12-04T16:02:26.553Z] RELEASED resource=Appointments session=sim-read-c40a6c63-73b3-41b5-882c-ecf0507c083f
+[2025-12-04T16:02:26.554Z] ACQUIRED type=write resource=Appointments session=sim-write-cb7c56b8-b070-4616-bd3b-a21eed4975e0
+[2025-12-04T16:02:28.092Z] FORCE_UNLOCK resource=Appointments sessions=sim-write-cb7c56b8-b070-4616-bd3b-a21eed4975e0
+[2025-12-04T16:02:28.093Z] CLEAR_ALL invoked
+[2025-12-04T16:02:29.856Z] QUEUED type=write resource=Appointments session=sim-write-7ab6da47-d0c2-4ec4-a193-e768ad4e9a8b
+[2025-12-04T16:02:29.856Z] ACQUIRED type=write resource=Appointments session=sim-write-7ab6da47-d0c2-4ec4-a193-e768ad4e9a8b
+[2025-12-04T16:02:29.879Z] QUEUED type=write resource=Appointments session=sim-write-399d81d6-cb7e-4d14-b51b-5d3c45ab770b
+[2025-12-04T16:02:32.860Z] RELEASED resource=Appointments session=sim-write-7ab6da47-d0c2-4ec4-a193-e768ad4e9a8b
+[2025-12-04T16:02:32.861Z] ACQUIRED type=write resource=Appointments session=sim-write-399d81d6-cb7e-4d14-b51b-5d3c45ab770b
+[2025-12-04T16:02:35.864Z] RELEASED resource=Appointments session=sim-write-399d81d6-cb7e-4d14-b51b-5d3c45ab770b
+[2025-12-04T16:04:58.479Z] QUEUED type=write resource=Feedback session=8047bf24-2a36-465c-ae9b-1c2c82a27ac9
+[2025-12-04T16:04:58.479Z] ACQUIRED type=write resource=Feedback session=8047bf24-2a36-465c-ae9b-1c2c82a27ac9
+[2025-12-04T16:04:58.611Z] RELEASED resource=Feedback session=8047bf24-2a36-465c-ae9b-1c2c82a27ac9
+[2025-12-04T16:05:37.621Z] QUEUED type=read resource=Appointments session=sim-read-abe4ac80-221f-4897-881b-7ceed5b631fc
+[2025-12-04T16:05:37.621Z] ACQUIRED type=read resource=Appointments session=sim-read-abe4ac80-221f-4897-881b-7ceed5b631fc
+[2025-12-04T16:05:40.631Z] RELEASED resource=Appointments session=sim-read-abe4ac80-221f-4897-881b-7ceed5b631fc
+[2025-12-04T16:06:06.817Z] QUEUED type=write resource=Appointments session=916aae98-a30f-4467-90d0-e163b4adfa80
+[2025-12-04T16:06:06.817Z] ACQUIRED type=write resource=Appointments session=916aae98-a30f-4467-90d0-e163b4adfa80
+[2025-12-04T16:06:06.952Z] RELEASED resource=Appointments session=916aae98-a30f-4467-90d0-e163b4adfa80
+[2025-12-04T16:06:25.431Z] QUEUED type=write resource=Appointments session=1514bc05-63a0-4020-bad0-56503c0c9c5b
+[2025-12-04T16:06:25.431Z] ACQUIRED type=write resource=Appointments session=1514bc05-63a0-4020-bad0-56503c0c9c5b
+[2025-12-04T16:06:25.558Z] RELEASED resource=Appointments session=1514bc05-63a0-4020-bad0-56503c0c9c5b
+[2025-12-04T16:07:07.388Z] QUEUED type=write resource=Appointments session=642d72c5-8128-4cda-bedb-7fd1499f70bf
+[2025-12-04T16:07:07.388Z] ACQUIRED type=write resource=Appointments session=642d72c5-8128-4cda-bedb-7fd1499f70bf
+[2025-12-04T16:07:07.503Z] RELEASED resource=Appointments session=642d72c5-8128-4cda-bedb-7fd1499f70bf
+[2025-12-04T16:08:41.620Z] QUEUED type=write resource=Nurses session=5cc93ebd-be39-444c-88f1-5b25c17aa697
+[2025-12-04T16:08:41.620Z] ACQUIRED type=write resource=Nurses session=5cc93ebd-be39-444c-88f1-5b25c17aa697
+[2025-12-04T16:08:41.702Z] RELEASED resource=Nurses session=5cc93ebd-be39-444c-88f1-5b25c17aa697
+[2025-12-04T16:09:07.150Z] ACQUIRED type=read resource=Appointments session=sim-read-3583e7d3-8208-47b7-80c9-2ee702dac525
+[2025-12-04T16:09:07.150Z] QUEUED type=read resource=Appointments session=sim-read-3583e7d3-8208-47b7-80c9-2ee702dac525
+[2025-12-04T16:09:22.166Z] RELEASED resource=Appointments session=sim-read-3583e7d3-8208-47b7-80c9-2ee702dac525
+[2025-12-04T16:11:39.679Z] QUEUED type=read resource=Appointments session=sim-read-25d3c5e9-f6c1-4b05-909b-b61f59955509
+[2025-12-04T16:11:39.679Z] ACQUIRED type=read resource=Appointments session=sim-read-25d3c5e9-f6c1-4b05-909b-b61f59955509
+[2025-12-04T16:11:54.692Z] RELEASED resource=Appointments session=sim-read-25d3c5e9-f6c1-4b05-909b-b61f59955509
+[2025-12-04T16:12:03.521Z] ACQUIRED type=read resource=Appointments session=sim-read-e901d998-c843-45b4-a156-d186b56139dc
+[2025-12-04T16:12:03.521Z] QUEUED type=read resource=Appointments session=sim-read-e901d998-c843-45b4-a156-d186b56139dc
+[2025-12-04T16:14:45.819Z] QUEUED type=read resource=Patients session=001b2c3b-583a-4cc0-9b2f-e0331406baf8
+[2025-12-04T16:14:45.819Z] ACQUIRED type=read resource=Patients session=001b2c3b-583a-4cc0-9b2f-e0331406baf8
+[2025-12-04T16:14:45.913Z] RELEASED resource=Patients session=001b2c3b-583a-4cc0-9b2f-e0331406baf8
+[2025-12-04T16:14:45.922Z] ACQUIRED type=read resource=Patients session=2bdfdfd1-e731-4b2c-b1f3-c76c4ad06f9f
+[2025-12-04T16:14:45.922Z] QUEUED type=read resource=Patients session=2bdfdfd1-e731-4b2c-b1f3-c76c4ad06f9f
+[2025-12-04T16:14:46.014Z] RELEASED resource=Patients session=2bdfdfd1-e731-4b2c-b1f3-c76c4ad06f9f
+[2025-12-04T16:14:52.093Z] QUEUED type=read resource=LabTests session=70e48bb5-ecbe-40e5-ae5d-bbb595581cae
+[2025-12-04T16:14:52.097Z] ACQUIRED type=read resource=LabTests session=70e48bb5-ecbe-40e5-ae5d-bbb595581cae
+[2025-12-04T16:14:52.174Z] RELEASED resource=LabTests session=70e48bb5-ecbe-40e5-ae5d-bbb595581cae
+[2025-12-04T16:14:52.185Z] QUEUED type=read resource=LabTests session=40b1ca51-38d0-4fc2-a8ea-1a7bba0dd15b
+[2025-12-04T16:14:52.185Z] ACQUIRED type=read resource=LabTests session=40b1ca51-38d0-4fc2-a8ea-1a7bba0dd15b
+[2025-12-04T16:14:52.257Z] RELEASED resource=LabTests session=40b1ca51-38d0-4fc2-a8ea-1a7bba0dd15b
+[2025-12-04T16:15:00.666Z] QUEUED type=read resource=Feedback session=5a8d3bd2-9aea-4284-8d63-92a9a05f577c
+[2025-12-04T16:15:00.666Z] ACQUIRED type=read resource=Feedback session=5a8d3bd2-9aea-4284-8d63-92a9a05f577c
+[2025-12-04T16:15:00.740Z] RELEASED resource=Feedback session=5a8d3bd2-9aea-4284-8d63-92a9a05f577c
+[2025-12-04T16:15:00.748Z] QUEUED type=read resource=Feedback session=c7a89e1d-de7b-4c61-acd7-481c11e3d32c
+[2025-12-04T16:15:00.748Z] ACQUIRED type=read resource=Feedback session=c7a89e1d-de7b-4c61-acd7-481c11e3d32c
+[2025-12-04T16:15:00.834Z] RELEASED resource=Feedback session=c7a89e1d-de7b-4c61-acd7-481c11e3d32c
+[2025-12-04T16:15:06.137Z] QUEUED type=read resource=Appointments session=efc5facd-ec30-438b-8fbe-0c3648ae9e37
+[2025-12-04T16:15:06.137Z] ACQUIRED type=read resource=Appointments session=efc5facd-ec30-438b-8fbe-0c3648ae9e37
+[2025-12-04T16:15:06.213Z] RELEASED resource=Appointments session=efc5facd-ec30-438b-8fbe-0c3648ae9e37
+[2025-12-04T16:15:06.225Z] QUEUED type=read resource=Appointments session=fe11cd1f-4ce1-4ca8-a794-feca1ee759d2
+[2025-12-04T16:15:06.225Z] ACQUIRED type=read resource=Appointments session=fe11cd1f-4ce1-4ca8-a794-feca1ee759d2
+[2025-12-04T16:15:06.306Z] RELEASED resource=Appointments session=fe11cd1f-4ce1-4ca8-a794-feca1ee759d2
+[2025-12-04T16:15:25.424Z] QUEUED type=read resource=Bills session=201e0089-5749-4adb-a48e-8803383fe054
+[2025-12-04T16:15:25.425Z] ACQUIRED type=read resource=Bills session=201e0089-5749-4adb-a48e-8803383fe054
+[2025-12-04T16:15:25.503Z] RELEASED resource=Bills session=201e0089-5749-4adb-a48e-8803383fe054
+[2025-12-04T16:15:25.530Z] ACQUIRED type=read resource=Bills session=3e8b31ab-2ab7-4494-80b1-33acf9ffc695
+[2025-12-04T16:15:25.530Z] QUEUED type=read resource=Bills session=3e8b31ab-2ab7-4494-80b1-33acf9ffc695
+[2025-12-04T16:15:25.615Z] RELEASED resource=Bills session=3e8b31ab-2ab7-4494-80b1-33acf9ffc695
+[2025-12-04T16:16:58.916Z] QUEUED type=write resource=Appointments session=sim-write-ac748c36-40a1-4853-ae98-55ebc04935e2
+[2025-12-04T16:17:03.927Z] TIMEOUT type=write resource=Appointments session=sim-write-ac748c36-40a1-4853-ae98-55ebc04935e2
+[2025-12-04T16:17:12.030Z] QUEUED type=write resource=Appointments session=sim-write-39f913e0-cfcc-403d-8a77-32c9aeca4244
+[2025-12-04T16:17:17.030Z] TIMEOUT type=write resource=Appointments session=sim-write-39f913e0-cfcc-403d-8a77-32c9aeca4244
+[2025-12-04T16:17:52.922Z] FORCE_UNLOCK resource=Appointments sessions=sim-read-e901d998-c843-45b4-a156-d186b56139dc
+[2025-12-04T16:17:52.928Z] CLEAR_ALL invoked
+[2025-12-04T16:17:54.004Z] QUEUED type=write resource=Appointments session=sim-write-2b904f42-22ec-46c1-b155-a5ca974c9ca3
+[2025-12-04T16:17:54.004Z] ACQUIRED type=write resource=Appointments session=sim-write-2b904f42-22ec-46c1-b155-a5ca974c9ca3
+[2025-12-04T16:18:09.016Z] RELEASED resource=Appointments session=sim-write-2b904f42-22ec-46c1-b155-a5ca974c9ca3
+[2025-12-04T16:20:05.319Z] ACQUIRED type=write resource=Appointments session=0c90b7b8-c85a-4767-bdd7-cecdf70a0aa0
+[2025-12-04T16:20:05.319Z] QUEUED type=write resource=Appointments session=0c90b7b8-c85a-4767-bdd7-cecdf70a0aa0
+[2025-12-04T16:20:05.430Z] RELEASED resource=Appointments session=0c90b7b8-c85a-4767-bdd7-cecdf70a0aa0
+[2025-12-04T16:20:14.774Z] QUEUED type=write resource=Appointments session=f0c621bd-4fc1-4714-94ee-061619363675
+[2025-12-04T16:20:14.774Z] ACQUIRED type=write resource=Appointments session=f0c621bd-4fc1-4714-94ee-061619363675
+[2025-12-04T16:20:14.847Z] RELEASED resource=Appointments session=f0c621bd-4fc1-4714-94ee-061619363675
+[2025-12-04T16:26:09.469Z] CLEAR_ALL invoked
+[2025-12-04T16:26:09.563Z] QUEUED type=read resource=Appointments session=sim-read-c2c3b23e-3a6e-431c-9b2e-13906e9a87d3
+[2025-12-04T16:26:09.563Z] ACQUIRED type=read resource=Appointments session=sim-read-c2c3b23e-3a6e-431c-9b2e-13906e9a87d3
+[2025-12-04T16:26:09.817Z] QUEUED type=write resource=Appointments session=sim-write-78e41622-8086-4ba8-a2dd-77547bdd2425
+[2025-12-04T16:26:14.830Z] TIMEOUT type=write resource=Appointments session=sim-write-78e41622-8086-4ba8-a2dd-77547bdd2425
+[2025-12-04T16:26:24.570Z] RELEASED resource=Appointments session=sim-read-c2c3b23e-3a6e-431c-9b2e-13906e9a87d3
+[2025-12-04T16:30:31.157Z] QUEUED type=read resource=Appointments session=sim-read-cf020a34-42c2-4f1e-9389-12af97fbb8b7
+[2025-12-04T16:30:31.158Z] ACQUIRED type=read resource=Appointments session=sim-read-cf020a34-42c2-4f1e-9389-12af97fbb8b7
+[2025-12-04T16:30:32.434Z] QUEUED type=write resource=Appointments session=sim-write-cba6aa60-aea3-4982-9b43-091dbf7c9707
+[2025-12-04T16:30:37.443Z] TIMEOUT type=write resource=Appointments session=sim-write-cba6aa60-aea3-4982-9b43-091dbf7c9707
+[2025-12-04T16:30:41.328Z] FORCE_UNLOCK resource=Appointments sessions=sim-read-cf020a34-42c2-4f1e-9389-12af97fbb8b7
+[2025-12-04T16:30:43.567Z] QUEUED type=write resource=Appointments session=sim-write-edabbdb0-fe4e-42d1-9b6f-217437fd04d3
+[2025-12-04T16:30:43.567Z] ACQUIRED type=write resource=Appointments session=sim-write-edabbdb0-fe4e-42d1-9b6f-217437fd04d3
+[2025-12-04T16:30:58.582Z] RELEASED resource=Appointments session=sim-write-edabbdb0-fe4e-42d1-9b6f-217437fd04d3
+[2025-12-04T16:32:23.209Z] QUEUED type=read resource=Patients session=456e3784-716c-4372-a867-339c06b88d36
+[2025-12-04T16:32:23.209Z] ACQUIRED type=read resource=Patients session=456e3784-716c-4372-a867-339c06b88d36
+[2025-12-04T16:32:23.291Z] RELEASED resource=Patients session=456e3784-716c-4372-a867-339c06b88d36
+[2025-12-04T16:32:23.308Z] QUEUED type=read resource=Patients session=8f88a983-bc7b-44e7-bed8-cfbfc6e84e8e
+[2025-12-04T16:32:23.308Z] ACQUIRED type=read resource=Patients session=8f88a983-bc7b-44e7-bed8-cfbfc6e84e8e
+[2025-12-04T16:32:23.388Z] RELEASED resource=Patients session=8f88a983-bc7b-44e7-bed8-cfbfc6e84e8e
+[2025-12-04T16:32:50.204Z] ACQUIRED type=read resource=Patients session=ee2d5782-f5a2-4426-81f7-6883e520236a
+[2025-12-04T16:32:50.204Z] QUEUED type=read resource=Patients session=ee2d5782-f5a2-4426-81f7-6883e520236a
+[2025-12-04T16:32:50.284Z] RELEASED resource=Patients session=ee2d5782-f5a2-4426-81f7-6883e520236a
+[2025-12-04T16:32:50.290Z] ACQUIRED type=read resource=Patients session=697a7ac1-831d-41d1-abb4-95995155a6e0
+[2025-12-04T16:32:50.290Z] QUEUED type=read resource=Patients session=697a7ac1-831d-41d1-abb4-95995155a6e0
+[2025-12-04T16:32:50.372Z] RELEASED resource=Patients session=697a7ac1-831d-41d1-abb4-95995155a6e0
+[2025-12-04T16:33:03.825Z] QUEUED type=write resource=Patients session=b9c8e19c-b5f7-4af8-8fa7-5d421175041b
+[2025-12-04T16:33:03.825Z] ACQUIRED type=write resource=Patients session=b9c8e19c-b5f7-4af8-8fa7-5d421175041b
+[2025-12-04T16:33:04.037Z] RELEASED resource=Patients session=b9c8e19c-b5f7-4af8-8fa7-5d421175041b
+[2025-12-04T16:33:12.679Z] QUEUED type=write resource=Patients session=cbdd71a3-9293-404b-b516-88b94137a5a7
+[2025-12-04T16:33:12.679Z] ACQUIRED type=write resource=Patients session=cbdd71a3-9293-404b-b516-88b94137a5a7
+[2025-12-04T16:33:12.807Z] RELEASED resource=Patients session=cbdd71a3-9293-404b-b516-88b94137a5a7
+[2025-12-04T16:33:16.262Z] QUEUED type=read resource=Patients session=32cbe9a6-0b31-4840-8444-93b3cd59fc0b
+[2025-12-04T16:33:16.262Z] ACQUIRED type=read resource=Patients session=32cbe9a6-0b31-4840-8444-93b3cd59fc0b
+[2025-12-04T16:33:16.347Z] RELEASED resource=Patients session=32cbe9a6-0b31-4840-8444-93b3cd59fc0b
+[2025-12-04T16:33:16.364Z] ACQUIRED type=read resource=Patients session=5332e860-fdd5-4bd1-acdd-e51b6c625ffd
+[2025-12-04T16:33:16.364Z] QUEUED type=read resource=Patients session=5332e860-fdd5-4bd1-acdd-e51b6c625ffd
+[2025-12-04T16:33:16.446Z] RELEASED resource=Patients session=5332e860-fdd5-4bd1-acdd-e51b6c625ffd

@@ -175,6 +175,8 @@ const STAGE_TEMPLATES = {
 
 const DEFAULT_RAW_PIPELINE = '[\n  {\n    "$match": {}\n  }\n]';
 
+const AGGREGATION_TIMEOUT_MS = 20000;
+
 interface PipelineStage {
   id: string;
   type: string;
@@ -206,6 +208,23 @@ export default function Aggregations() {
   "field": 1
 }`);
   const [indexOptionsInput, setIndexOptionsInput] = useState('');
+
+  const runWithTimeout = useCallback(async <T,>(task: (signal: AbortSignal) => Promise<T>) => {
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => controller.abort(), AGGREGATION_TIMEOUT_MS);
+    try {
+      return await task(controller.signal);
+    } finally {
+      clearTimeout(timer);
+    }
+  }, []);
+
+  const isAbortError = (error: unknown) => {
+    if (typeof DOMException !== 'undefined' && error instanceof DOMException) {
+      return error.name === 'AbortError';
+    }
+    return error instanceof Error && error.name === 'AbortError';
+  };
 
   useEffect(() => {
     let mounted = true;
@@ -324,7 +343,9 @@ export default function Aggregations() {
     const startTime = performance.now();
 
     try {
-      const response = await runAggregation(selectedCollection, pipeline);
+      const response = await runWithTimeout((signal) =>
+        runAggregation(selectedCollection, pipeline, undefined, { signal })
+      );
       const rows = response.results || [];
       setResults(rows);
       setExecutionTime(performance.now() - startTime);
@@ -341,18 +362,35 @@ export default function Aggregations() {
       }
 
       try {
-        const statsResponse = await runAggregationWithStats(selectedCollection, pipeline);
+        const statsResponse = await runWithTimeout((signal) =>
+          runAggregationWithStats(selectedCollection, pipeline, undefined, { signal })
+        );
         setExecutionStats(statsResponse?.stats ?? null);
       } catch (statsError) {
         setExecutionStats(null);
-        if (import.meta.env.DEV) {
+        if (isAbortError(statsError)) {
+          toast({
+            title: 'Explain timed out',
+            description: 'Execution stats cancelled to keep the UI responsive.',
+          });
+        } else if (import.meta.env.DEV) {
           console.warn('[Aggregation] execution stats failed', statsError);
         }
       }
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Aggregation failed';
-      toast({ title: 'Aggregation error', description: message, variant: 'destructive' });
+      if (isAbortError(error)) {
+        toast({
+          title: 'Aggregation timed out',
+          description: `Query exceeded ${AGGREGATION_TIMEOUT_MS / 1000}s. Narrow your $match or add indexes.`,
+          variant: 'destructive',
+        });
+      } else {
+        const message = error instanceof Error ? error.message : 'Aggregation failed';
+        toast({ title: 'Aggregation error', description: message, variant: 'destructive' });
+      }
       setExecutionStats(null);
+      setResults(null);
+      setExecutionTime(null);
     } finally {
       setIsRunning(false);
     }

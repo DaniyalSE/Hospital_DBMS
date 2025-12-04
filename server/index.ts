@@ -5,6 +5,7 @@ import { createServer } from "http";
 import collectionsRouter from "./routes/collections";
 import dashboardRouter from "./routes/dashboard";
 import adminRouter from "./routes/admin";
+import locksRouter from "./routes/locks";
 import { initRealtime } from "./realtime";
 import { API_BASE_PATH } from "./constants";
 import { getMongoClient } from "./mongoClient";
@@ -22,6 +23,7 @@ app.get("/health", (_req, res) => {
 app.use(`${API_BASE_PATH}/collections`, collectionsRouter);
 app.use(`${API_BASE_PATH}/dashboard`, dashboardRouter);
 app.use(`${API_BASE_PATH}/admin`, adminRouter);
+app.use(`${API_BASE_PATH}/locks`, locksRouter);
 
 app.use((error: Error, _req: Request, res: Response, _next: NextFunction) => {
   console.error(error);

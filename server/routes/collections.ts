@@ -3,10 +3,34 @@ import type { Document, Filter, Sort } from "mongodb";
 import { z } from "zod";
 import { getDb, getStatsDb } from "../mongoClient";
 import { normalizeDocument, parseJSON, toObjectId } from "../utils/parsers";
+import lockManager from "../concurrency/LockManager";
+import { getSessionId } from "../utils/session";
 
 const router = Router();
 
-type GenericDocument = Document & { _id?: string | ReturnType<typeof toObjectId> };
+const VERSION_FIELD = "__v";
+
+type GenericDocument = Document & { _id?: string | ReturnType<typeof toObjectId>; __v?: number };
+
+const buildResourceId = (name?: string) => name ?? "global";
+
+function stampDocument(document: GenericDocument) {
+  const now = new Date();
+  const version = typeof document[VERSION_FIELD] === "number" ? document[VERSION_FIELD] : 1;
+  return {
+    ...document,
+    createdAt: document.createdAt ?? now,
+    updatedAt: now,
+    [VERSION_FIELD]: version,
+  } satisfies GenericDocument;
+}
+
+function sanitizeUpdatePayload(update: Record<string, unknown>) {
+  const cloned: Record<string, unknown> = { ...update };
+  delete cloned._id;
+  delete cloned[VERSION_FIELD];
+  return cloned;
+}
 
 const paginationSchema = z.object({
   page: z.coerce.number().int().min(1).default(1),
@@ -110,8 +134,11 @@ router.get("/:name/document/:id", async (req, res, next) => {
 });
 
 router.post("/:name/document", async (req, res, next) => {
+  const { name } = req.params;
+  const sessionId = getSessionId(req);
+  const resourceId = buildResourceId(name);
+  await lockManager.acquireWriteLock(resourceId, sessionId);
   try {
-    const { name } = req.params;
     const db = await getDb();
     const collection = db.collection<GenericDocument>(name);
 
@@ -120,16 +147,22 @@ router.post("/:name/document", async (req, res, next) => {
       return res.status(400).json({ message: "document payload is required" });
     }
 
-    const result = await collection.insertOne(document);
+    const stamped = stampDocument(document as GenericDocument);
+    const result = await collection.insertOne(stamped);
     res.status(201).json({ insertedId: result.insertedId.toString() });
   } catch (error) {
     next(error);
+  } finally {
+    await lockManager.releaseLock(resourceId, sessionId);
   }
 });
 
 router.post("/:name/documents", async (req, res, next) => {
+  const { name } = req.params;
+  const sessionId = getSessionId(req);
+  const resourceId = buildResourceId(name);
+  await lockManager.acquireWriteLock(resourceId, sessionId);
   try {
-    const { name } = req.params;
     const db = await getDb();
     const collection = db.collection<GenericDocument>(name);
 
@@ -138,37 +171,74 @@ router.post("/:name/documents", async (req, res, next) => {
       return res.status(400).json({ message: "documents array is required" });
     }
 
-    const result = await collection.insertMany(documents);
+    const stampedDocs = documents.map((doc) => stampDocument(doc as GenericDocument));
+    const result = await collection.insertMany(stampedDocs);
     res.status(201).json({ insertedCount: result.insertedCount, insertedIds: Object.values(result.insertedIds).map(String) });
   } catch (error) {
     next(error);
+  } finally {
+    await lockManager.releaseLock(resourceId, sessionId);
   }
 });
 
 router.patch("/:name/:id", async (req, res, next) => {
+  const { name, id } = req.params;
+  const sessionId = getSessionId(req);
+  const resourceId = buildResourceId(name);
+  await lockManager.acquireWriteLock(resourceId, sessionId);
   try {
-    const { name, id } = req.params;
     const db = await getDb();
     const collection = db.collection<GenericDocument>(name);
 
-    const { update } = req.body ?? {};
+    const { update, expectedVersion } = req.body ?? {};
     if (!update || typeof update !== "object") {
       return res.status(400).json({ message: "update payload is required" });
     }
 
     const objectId = toObjectId(id);
-    const filter: Filter<GenericDocument> = objectId ? { _id: objectId } : { _id: id };
+    const idFilter: Filter<GenericDocument> = objectId ? { _id: objectId } : { _id: id };
 
-    const result = await collection.updateOne(filter, { $set: update });
+    const versionFilters: Filter<GenericDocument>[] = [];
+    if (typeof expectedVersion === "number") {
+      versionFilters.push({ [VERSION_FIELD]: expectedVersion } as Filter<GenericDocument>);
+      if (expectedVersion === 0) {
+        versionFilters.push({ [VERSION_FIELD]: { $exists: false } } as Filter<GenericDocument>);
+      }
+    } else {
+      versionFilters.push({ [VERSION_FIELD]: { $exists: false } } as Filter<GenericDocument>);
+    }
+
+    const filter: Filter<GenericDocument> = versionFilters.length
+      ? ({
+          ...idFilter,
+          $or: versionFilters,
+        } as Filter<GenericDocument>)
+      : idFilter;
+
+    const sanitized = sanitizeUpdatePayload(update as Record<string, unknown>);
+    const result = await collection.updateOne(filter, {
+      $set: { ...sanitized, updatedAt: new Date() },
+      $inc: { [VERSION_FIELD]: 1 },
+    });
+
+    if (!result.matchedCount) {
+      return res.status(409).json({ message: "Version conflict: document was updated by someone else." });
+    }
+
     res.json({ modifiedCount: result.modifiedCount });
   } catch (error) {
     next(error);
+  } finally {
+    await lockManager.releaseLock(resourceId, sessionId);
   }
 });
 
 router.post("/:name/update", async (req, res, next) => {
+  const { name } = req.params;
+  const sessionId = getSessionId(req);
+  const resourceId = buildResourceId(name);
+  await lockManager.acquireWriteLock(resourceId, sessionId);
   try {
-    const { name } = req.params;
     const { filter, update } = req.body ?? {};
 
     if (!filter || typeof filter !== "object" || !update || typeof update !== "object") {
@@ -181,12 +251,17 @@ router.post("/:name/update", async (req, res, next) => {
     res.json({ modifiedCount: result.modifiedCount });
   } catch (error) {
     next(error);
+  } finally {
+    await lockManager.releaseLock(resourceId, sessionId);
   }
 });
 
 router.delete("/:name/:id", async (req, res, next) => {
+  const { name, id } = req.params;
+  const sessionId = getSessionId(req);
+  const resourceId = buildResourceId(name);
+  await lockManager.acquireWriteLock(resourceId, sessionId);
   try {
-    const { name, id } = req.params;
     const db = await getDb();
     const collection = db.collection<GenericDocument>(name);
 
@@ -197,12 +272,17 @@ router.delete("/:name/:id", async (req, res, next) => {
     res.json({ deletedCount: result.deletedCount });
   } catch (error) {
     next(error);
+  } finally {
+    await lockManager.releaseLock(resourceId, sessionId);
   }
 });
 
 router.post("/:name/delete", async (req, res, next) => {
+  const { name } = req.params;
+  const sessionId = getSessionId(req);
+  const resourceId = buildResourceId(name);
+  await lockManager.acquireWriteLock(resourceId, sessionId);
   try {
-    const { name } = req.params;
     const db = await getDb();
     const collection = db.collection<GenericDocument>(name);
 
@@ -215,12 +295,17 @@ router.post("/:name/delete", async (req, res, next) => {
     res.json({ deletedCount: result.deletedCount });
   } catch (error) {
     next(error);
+  } finally {
+    await lockManager.releaseLock(resourceId, sessionId);
   }
 });
 
 router.post("/:name/aggregate", async (req, res, next) => {
+  const { name } = req.params;
+  const sessionId = getSessionId(req);
+  const resourceId = buildResourceId(name);
+  await lockManager.acquireReadLock(resourceId, sessionId);
   try {
-    const { name } = req.params;
     const body = req.body ?? [];
 
     const pipeline = Array.isArray(body) ? body : body?.pipeline;
@@ -242,12 +327,17 @@ router.post("/:name/aggregate", async (req, res, next) => {
     res.json({ ok: true, results });
   } catch (error) {
     next(error);
+  } finally {
+    await lockManager.releaseLock(resourceId, sessionId);
   }
 });
 
 router.post("/:name/aggregate/stats", async (req, res, next) => {
+  const { name } = req.params;
+  const sessionId = getSessionId(req);
+  const resourceId = buildResourceId(name);
+  await lockManager.acquireReadLock(resourceId, sessionId);
   try {
-    const { name } = req.params;
     const body = req.body ?? [];
 
     const pipeline = Array.isArray(body) ? body : body?.pipeline;
@@ -269,6 +359,8 @@ router.post("/:name/aggregate/stats", async (req, res, next) => {
     res.json({ ok: true, stats });
   } catch (error) {
     next(error);
+  } finally {
+    await lockManager.releaseLock(resourceId, sessionId);
   }
 });
 
@@ -317,8 +409,11 @@ router.get("/:name/indexes", async (req, res, next) => {
 });
 
 router.post("/:name/indexes", async (req, res, next) => {
+  const { name } = req.params;
+  const sessionId = getSessionId(req);
+  const resourceId = buildResourceId(name);
+  await lockManager.acquireWriteLock(resourceId, sessionId);
   try {
-    const { name } = req.params;
     const { keys, options } = req.body ?? {};
 
     if (!keys || typeof keys !== "object") {
@@ -332,12 +427,17 @@ router.post("/:name/indexes", async (req, res, next) => {
     res.json({ indexName });
   } catch (error) {
     next(error);
+  } finally {
+    await lockManager.releaseLock(resourceId, sessionId);
   }
 });
 
 router.delete("/:name/indexes/:indexName", async (req, res, next) => {
+  const { name, indexName } = req.params;
+  const sessionId = getSessionId(req);
+  const resourceId = buildResourceId(name);
+  await lockManager.acquireWriteLock(resourceId, sessionId);
   try {
-    const { name, indexName } = req.params;
     const db = await getDb();
     const collection = db.collection(name);
 
@@ -345,6 +445,8 @@ router.delete("/:name/indexes/:indexName", async (req, res, next) => {
     res.json({ dropped: true });
   } catch (error) {
     next(error);
+  } finally {
+    await lockManager.releaseLock(resourceId, sessionId);
   }
 });
 

@@ -15,6 +15,7 @@ import VulnerabilityLab from "@/pages/VulnerabilityLab";
 import Admin from "@/pages/Admin";
 import Settings from "@/pages/Settings";
 import NotFound from "@/pages/NotFound";
+import LockingDashboard from "@/pages/LockingDashboard";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
               <Route path="/aggregations" element={<Aggregations />} />
               <Route path="/transactions" element={<Transactions />} />
               <Route path="/vulnerability-lab" element={<VulnerabilityLab />} />
+              <Route path="/locking" element={<LockingDashboard />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/settings" element={<Settings />} />
             </Route>

@@ -19,6 +19,7 @@ export interface CollectionIndex {
 
 export interface MongoDocument {
   _id: string;
+  __v?: number;
   [key: string]: unknown;
 }
 
@@ -156,11 +157,19 @@ export function useMongoDb() {
   );
 
   const updateDocument = useCallback(
-    async (collection: string, documentId: string, update: Record<string, unknown>) => {
-      return request<{ modifiedCount: number }>(`${COLLECTIONS_API}/${encodeURIComponent(collection)}/${documentId}`, {
-        method: "PATCH",
-        body: JSON.stringify({ update }),
-      });
+    async (
+      collection: string,
+      documentId: string,
+      update: Record<string, unknown>,
+      expectedVersion?: number,
+    ) => {
+      return request<{ modifiedCount: number; newVersion?: number }>(
+        `${COLLECTIONS_API}/${encodeURIComponent(collection)}/${documentId}`,
+        {
+          method: "PATCH",
+          body: JSON.stringify({ update, expectedVersion }),
+        },
+      );
     },
     [request],
   );
@@ -195,22 +204,34 @@ export function useMongoDb() {
   );
 
   const runAggregation = useCallback(
-    async (collection: string, pipeline: Record<string, unknown>[], options?: Record<string, unknown>) => {
+    async (
+      collection: string,
+      pipeline: Record<string, unknown>[],
+      options?: Record<string, unknown>,
+      config?: { signal?: AbortSignal },
+    ) => {
       const payload = options && Object.keys(options).length > 0 ? { pipeline, options } : pipeline;
       return request<AggregationResult>(`${COLLECTIONS_API}/${encodeURIComponent(collection)}/aggregate`, {
         method: "POST",
         body: payload,
+        signal: config?.signal,
       });
     },
     [request],
   );
 
   const runAggregationWithStats = useCallback(
-    async (collection: string, pipeline: Record<string, unknown>[], options?: Record<string, unknown>) => {
+    async (
+      collection: string,
+      pipeline: Record<string, unknown>[],
+      options?: Record<string, unknown>,
+      config?: { signal?: AbortSignal },
+    ) => {
       const payload = options && Object.keys(options).length > 0 ? { pipeline, options } : pipeline;
       return request<AggregationStatsResult>(`${COLLECTIONS_API}/${encodeURIComponent(collection)}/aggregate/stats`, {
         method: "POST",
         body: payload,
+        signal: config?.signal,
       });
     },
     [request],
